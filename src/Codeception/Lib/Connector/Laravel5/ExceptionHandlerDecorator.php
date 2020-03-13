@@ -100,7 +100,7 @@ class ExceptionHandlerDecorator implements ExceptionHandlerContract
      * @param  \Throwable $e
      * @return void
      */
-    public function renderForConsole($output, \Thropwable $e)
+    public function renderForConsole($output, \Throwable $e)
     {
         $this->laravelExceptionHandler->renderForConsole($output, $e);
     }

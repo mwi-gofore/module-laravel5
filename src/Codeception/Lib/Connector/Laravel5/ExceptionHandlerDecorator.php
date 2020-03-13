@@ -53,10 +53,10 @@ class ExceptionHandlerDecorator implements ExceptionHandlerContract
     /**
       * Determine if the exception should be reported.
      *
-     * @param  \Exception $e
+     * @param  \Throwable $e
      * @return bool
      */
-    public function shouldReport(Exception $e)
+    public function shouldReport(\Throwable $e)
     {
         return $this->exceptionHandlingDisabled;
     }
@@ -97,10 +97,10 @@ class ExceptionHandlerDecorator implements ExceptionHandlerContract
      * Render an exception to the console.
      *
      * @param  \Symfony\Component\Console\Output\OutputInterface $output
-     * @param  \Exception $e
+     * @param  \Throwable $e
      * @return void
      */
-    public function renderForConsole($output, Exception $e)
+    public function renderForConsole($output, \Thropwable $e)
     {
         $this->laravelExceptionHandler->renderForConsole($output, $e);
     }

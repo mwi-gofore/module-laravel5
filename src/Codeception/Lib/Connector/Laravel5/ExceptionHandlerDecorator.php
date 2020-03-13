@@ -42,10 +42,10 @@ class ExceptionHandlerDecorator implements ExceptionHandlerContract
     /**
      * Report or log an exception.
      *
-     * @param  \Exception $e
+     * @param  \Throwable $e
      * @return void
      */
-    public function report(Exception $e)
+    public function report(\Throwable $e)
     {
         $this->laravelExceptionHandler->report($e);
     }
@@ -63,11 +63,11 @@ class ExceptionHandlerDecorator implements ExceptionHandlerContract
 
     /**
      * @param $request
-     * @param Exception $e
+     * @param \Throwable $e
      * @return \Symfony\Component\HttpFoundation\Response
-     * @throws Exception
+     * @throws \Throwable
      */
-    public function render($request, Exception $e)
+    public function render($request, \Throwable $e)
     {
         $response = $this->laravelExceptionHandler->render($request, $e);
 
